@@ -1,0 +1,23 @@
+{% extends 'app/dummy.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>schoollist</title>
+    {% endblock  %}
+</head>
+<body>
+    {% block body_block %}
+
+    <center>
+        <h1>this is the schoollist</h1>
+        {% for i in school %}
+        <a href="{{i.pk}}"><h1>{{i.name}}</h1></a>
+        {% endfor %}
+    </center>
+    {% endblock %}
+</body>
+</html>

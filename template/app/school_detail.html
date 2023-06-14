@@ -1,0 +1,20 @@
+{% extends 'app/dummy.html' %}
+{% block title %}
+<title>detailviews</title>
+{% endblock  %}
+
+{% block body_block %}
+
+<center>
+    <h1>this is the schoollist</h1>
+    <h1>name of the school :{{detail.name}}</h1>
+    <h1>name of the principal :{{detail.principal}}</h1>
+    <h1>location of the school :{{detail.location}}</h1>
+    {% for i in detail.Students.all %}
+        <h1>student name is :{{i.sname}}</h1>
+        <h1>student age : {{i.sage}}</h1>
+    {% endfor %}
+    <h4><a href="{% url 'update' pk=detail.pk %}"class="btn btn-success">update</a></h4>
+    <h4><a href="{% url 'delete' pk=detail.pk %}" class="btn btn-danger">delete</a></h4>
+</center>
+{% endblock %}
